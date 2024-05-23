@@ -2,13 +2,12 @@
 seeds = false
 skip-lint = false
 [programs.localnet]
-anchor_vrf = "FNakiWan2eG3uq3sAKPw2a8UraACS62NWmq822EVNH7T"
-
+anchor_vrf = "3YkYBxgwExNqQm1ZSGNJsMuYDD9pC9NM3dmRfohqv3LA"
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "devnet"
 wallet = "/Users/parsa/.config/solana/id.json"
 
 [scripts]

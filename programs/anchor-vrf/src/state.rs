@@ -22,20 +22,17 @@ impl PlayerState {
         }
     }
 
-    /// Asserts that the player is able to play.
-    ///
-    /// Returns `Ok` on success.
-    pub fn assert_can_play(&self, prev_round_acc: &AccountInfo) -> Result<()> {
-        if self.rounds == 0 {
-            return Ok(());
-        }
-        let rand_acc = crate::misc::get_account_data(prev_round_acc)?;
-        match current_state(&rand_acc) {
-            CurrentState::Alive => Ok(()),
-            CurrentState::Dead => Err(crate::Error::PlayerDead.into()),
-            CurrentState::Playing => Err(crate::Error::TheCylinderIsStillSpinning.into()),
-        }
-    }
+    // pub fn assert_can_play(&self, prev_round_acc: &AccountInfo) -> Result<()> {
+    //     if self.rounds == 0 {
+    //         return Ok(());
+    //     }
+    //     let rand_acc = crate::misc::get_account_data(prev_round_acc)?;
+    //     match current_state(&rand_acc) {
+    //         CurrentState::Alive => Ok(()),
+    //         CurrentState::Dead => Err(crate::Error::PlayerDead.into()),
+    //         CurrentState::Playing => Err(crate::Error::TheCylinderIsStillSpinning.into()),
+    //     }
+    // }
 }
 
 /// Last round outcome.

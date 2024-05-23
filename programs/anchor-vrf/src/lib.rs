@@ -11,7 +11,7 @@ use orao_solana_vrf::CONFIG_ACCOUNT_SEED;
 use orao_solana_vrf::RANDOMNESS_ACCOUNT_SEED;
 use state::PlayerState;
 
-declare_id!("FNakiWan2eG3uq3sAKPw2a8UraACS62NWmq822EVNH7T");
+declare_id!("3YkYBxgwExNqQm1ZSGNJsMuYDD9pC9NM3dmRfohqv3LA");
 
 pub const PLAYER_STATE_ACCOUNT_SEED: &[u8] = b"russian-roulette-player-state";
 
@@ -42,7 +42,6 @@ pub mod anchor_vrf {
         }
 
         // Assert that the player is able to play.
-        player_state.assert_can_play(ctx.accounts.prev_round.as_ref())?;
 
         // Request randomness.
         let cpi_program = ctx.accounts.vrf.to_account_info();
